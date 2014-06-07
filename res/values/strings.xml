@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SCALE Fall Assistance</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="service_start">Start Service Test</string>
+    <string name="ticker_text">Fall Service Active</string>
+    <string name="notification_title">Fall Service Active - Title</string>
+    <string name="notification_message">RAAAWWWWR</string>
+    <string name="timer_text">00:00</string>
+    <string name="cancel_alert">Cancel Alert</string>
+    <string name="fall_duration_slider_title">Free Fall Duration</string>
+    <string name="fall_duration_slider">This setting controls how long the phone must be in free fall before it is considered an actual fall. Recommended value: 0.2 - 0.6.</string>
+    <string name="entire_fall_duration_slider_title">Entire Fall Duration</string>
+    <string name="entire_fall_duration_slider">This setting controls the span of time in which both fall events have to occur in order for a fall response to be triggered. Recommended value: 4-8.</string>
+    <string name="low_thresh_slider_title">Low Threshold Control</string>
+    <string name="low_thresh_slider">This setting controls the value at which the phone is considered to be in free fall (In acceleration). Recommended value: 1.5-3.</string>
+    <string name="high_thresh_slider_title">High Threshold Control</string>
+    <string name="high_thresh_slider">This setting controls the value at which an impact is considered part of a fall (In acceleration). Recommended value: 20-30.</string>
+
+    <item name="slider_default" format="float" type="string">0.5</item>
+    <color name="gmgrey">#292E37</color>
+
+    <string-array name="slider_summaries">
+        <item>Low</item>
+        <item>Medium-Low</item>
+        <item>Medium</item>
+        <item>Medium-High</item>
+        <item>High</item>
+    </string-array>
+
+</resources>

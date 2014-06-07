@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Fall Thresholds" >
+
+        <com.ics234.scalefalldetection.SliderPreference
+            android:defaultValue="@string/slider_default"
+            android:dialogMessage="@string/fall_duration_slider"
+            android:key="free_fall_slider"
+            android:summary="@array/slider_summaries"
+            android:title="@string/fall_duration_slider_title" />
+        <com.ics234.scalefalldetection.SliderPreference
+            android:defaultValue="@string/slider_default"
+            android:dialogMessage="@string/entire_fall_duration_slider"
+            android:key="fall_duration_slider"
+            android:summary="@array/slider_summaries"
+            android:title="@string/entire_fall_duration_slider_title" />
+        <com.ics234.scalefalldetection.SliderPreference
+            android:defaultValue="@string/slider_default"
+            android:dialogMessage="@string/low_thresh_slider"
+            android:key="low_threshold_slider"
+            android:summary="@array/slider_summaries"
+            android:title="@string/low_thresh_slider_title" />
+        <com.ics234.scalefalldetection.SliderPreference
+            android:defaultValue="@string/slider_default"
+            android:dialogMessage="@string/high_thresh_slider"
+            android:key="high_threshold_slider"
+            android:summary="@array/slider_summaries"
+            android:title="@string/high_thresh_slider_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

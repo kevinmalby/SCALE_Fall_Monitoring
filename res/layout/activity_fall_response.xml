@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent" >
+    
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="@drawable/main_nav_bg"
+	    android:orientation="vertical" >
+	    
+	    <RelativeLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="2">
+	        
+	        <com.ics234.scalefalldetection.GradientTextView 
+	            android:id="@+id/fall_detected_text"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true"
+		        android:layout_alignParentLeft="true"
+		        android:layout_marginLeft="5dp"
+		        android:text="FALL DETECTED!"
+		        android:textSize="35sp"/>
+	        
+	    </RelativeLayout>
+	
+	    <RelativeLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="4">
+	        
+	        
+	        
+	        <com.ics234.scalefalldetection.GradientTextView 
+	            android:id="@+id/timer_count"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true"
+		        android:layout_alignParentLeft="true"
+		        android:text="@string/timer_text"
+		        android:textSize="105sp"/>
+	        
+
+	        
+	        <TextView 
+	            android:id="@+id/timer_count_s"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textColor="#0F7140"
+		        android:layout_alignBaseline="@id/timer_count"
+		        android:layout_toRightOf="@id/timer_count"
+		        android:text="s"
+		        android:textSize="50sp"/>
+	    </RelativeLayout>
+	    
+
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	    	android:layout_height="0dp"
+	    	android:orientation="horizontal"
+	    	android:layout_weight="4"
+	    	android:weightSum="10">
+	        
+	        <ImageButton
+		        android:id="@+id/cancel_alert_btn"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:onClick="cancelAlertMessage"
+		        android:background="@null"
+		        android:scaleType="centerInside"
+		        android:src="@drawable/cancel_fall_btn"
+		        android:layout_marginTop="-40dp"
+		        android:layout_weight="4"
+		        android:padding="5dp" />
+	        
+	        <ImageButton
+		        android:id="@+id/send_alert_btn"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:onClick="sendAlertMessage"
+		        android:background="@null"
+		        android:src="@drawable/send_fall_btn"
+		        android:scaleType="centerInside"
+		        android:layout_marginTop="-40dp"
+		        android:layout_weight="4"
+		        android:padding="5dp" />
+	        
+	    </LinearLayout>
+	
+	</LinearLayout>
+	
+	<ImageView
+         android:id="@+id/bg_lines_response"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:src="@drawable/bg_lines" />
+</RelativeLayout>

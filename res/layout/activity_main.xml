@@ -1,0 +1,515 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_nav_bg"
+    tools:context="com.ics234.scalefalldetection.MainActivity" >
+    
+    <ImageView
+         android:id="@+id/bg_lines"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:src="@drawable/bg_lines"
+         android:layout_marginTop="-50dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:weightSum="100"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true" >
+
+	    <LinearLayout
+	        android:id="@+id/title_container"
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:orientation="vertical"
+	        android:layout_weight="25" >
+	        
+	        <RelativeLayout 
+	            android:id="@+id/top_header_container" 
+	            android:layout_width="match_parent"
+	            android:layout_height="0dp"
+	            android:layout_weight="2" >
+	            
+	            <com.ics234.scalefalldetection.GradientTextView
+	                android:id="@+id/top_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SCALE"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="40sp"
+                    android:textColor="#005599"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true" />
+	            
+	        </RelativeLayout>
+	        
+	        <RelativeLayout 
+	            android:id="@+id/sub_header_container" 
+	            android:layout_width="match_parent"
+	            android:layout_height="0dp"
+	            android:layout_weight="1" >
+	            
+	            <com.ics234.scalefalldetection.GradientTextView
+	                android:id="@+id/sub_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FALL DETECTION"
+                    android:textSize="22sp"
+                    android:textColor="#005599"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+	            
+	        </RelativeLayout>
+	        
+	    </LinearLayout>
+	    
+	    <LinearLayout
+	        android:id="@+id/button_container"
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:orientation="horizontal"
+	        android:layout_weight="60" >
+	        
+	        <LinearLayout
+		        android:id="@+id/controls_container"
+		        android:layout_width="0dp"
+		        android:layout_height="match_parent"
+		        android:orientation="vertical"
+		        android:layout_weight="75" >
+		        
+	            <RelativeLayout 
+		            android:id="@+id/volume_container" 
+		            android:layout_width="match_parent"
+		            android:layout_height="0dp"
+		            android:layout_weight="1" >
+	
+	                <ImageView
+	                    android:id="@+id/volume_background"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentLeft="true"
+	                    android:layout_alignParentTop="true"
+	                    android:src="@drawable/volume_background" />
+	                
+	                <LinearLayout 
+	                    android:layout_width="match_parent"
+	                    android:layout_height="match_parent"
+	                    android:orientation="horizontal"
+	                    android:layout_alignParentLeft="true"
+	                    android:layout_alignParentRight="true">
+	                    
+	                    <TextView 
+		                    android:layout_width="0dp"
+		                    android:layout_height="match_parent"
+		                    android:text="null"
+		                    android:textSize="16sp"
+		                    android:textColor="#00FFFFFF"
+		                    android:layout_weight="3" />
+	                    
+	                    <LinearLayout 
+	                        android:layout_width="0dp"
+				            android:layout_height="match_parent"
+				            android:layout_weight= "7"
+				            android:orientation="vertical" >
+				            
+	                        <RelativeLayout 
+	                            android:layout_width="match_parent"
+					            android:layout_height="0dp"
+					            android:layout_weight= "25">
+	                            
+	                            <TextView 
+				                    android:layout_width="wrap_content"
+				                    android:layout_height="wrap_content"
+				                    android:text="Alarm Volume"
+				                    android:textSize="16sp"
+				                    android:textColor="#98DEDE"
+				                    android:layout_marginLeft="20dp"
+				                    android:layout_alignParentBottom="true" />
+	                            
+	                        </RelativeLayout>
+	                        
+	                        <LinearLayout 
+		                        android:layout_width="match_parent"
+					            android:layout_height="0dp"
+					            android:layout_weight= "50"
+					            android:orientation="horizontal" >
+	                        
+	                            <RelativeLayout 
+		                            android:layout_width="0dp"
+						            android:layout_height="match_parent"
+						            android:layout_weight= "10">
+						            
+			                        <ImageButton
+					                    android:id="@+id/left_nav_volume"
+					                    android:layout_width="wrap_content"
+					                    android:layout_height="wrap_content"
+					                    android:onClick="clickLeftNavVolume"
+					                    android:layout_centerVertical="true"
+					                    android:layout_marginRight="5dp"
+					                    android:background="@drawable/left_nav_volume" />
+			                    </RelativeLayout>
+		                        
+	                            <RelativeLayout 
+		                            android:layout_width="0dp"
+						            android:layout_height="match_parent"
+						            android:layout_weight= "60">
+			                        
+			                        <TextView
+			                            android:id="@+id/volume_control_text"
+					                    android:layout_width="wrap_content"
+					                    android:layout_height="wrap_content"
+					                    android:layout_centerInParent="true"
+					                    android:textSize="18sp"
+					                    android:textColor="#222222" />
+			                    </RelativeLayout>
+		                        
+	                            <RelativeLayout 
+		                            android:layout_width="0dp"
+						            android:layout_height="match_parent"
+						            android:layout_weight= "30">
+			                        <ImageButton
+					                    android:id="@+id/right_nav_volume"
+					                    android:layout_width="wrap_content"
+					                    android:layout_height="wrap_content"
+					                    android:layout_centerVertical="true"
+					                    android:layout_marginLeft="5dp"
+					                    android:onClick="clickRightNavVolume"
+					                    android:layout_marginRight="5dp"
+					                    android:background="@drawable/right_nav_volume" />
+			                    </RelativeLayout>
+	                        </LinearLayout>
+	                        
+	                        <RelativeLayout 
+	                            android:layout_width="match_parent"
+					            android:layout_height="0dp"
+					            android:layout_weight= "30">
+	                            
+	                            
+	                        </RelativeLayout>
+	                        
+	                    </LinearLayout>
+	                    
+	                </LinearLayout>
+		            
+		        </RelativeLayout>
+		        
+	            <RelativeLayout 
+		            android:id="@+id/timer_container" 
+		            android:layout_width="match_parent"
+		            android:layout_height="0dp"
+		            android:layout_weight= "1" >
+	
+	                <ImageView
+	                    android:id="@+id/timer_background"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentLeft="true"
+	                    android:layout_alignParentTop="true"
+	                    android:src="@drawable/timer_background" />
+	                
+	                <LinearLayout 
+	                    android:layout_width="match_parent"
+	                    android:layout_height="match_parent"
+	                    android:orientation="horizontal"
+	                    android:layout_alignParentLeft="true"
+	                    android:layout_alignParentRight="true">
+	                    
+	                    <TextView 
+		                    android:layout_width="0dp"
+		                    android:layout_height="match_parent"
+		                    android:text="null"
+		                    android:textSize="16sp"
+		                    android:textColor="#00FFFFFF"
+		                    android:layout_weight="3" />
+	                    
+	                    <LinearLayout 
+	                        android:layout_width="0dp"
+				            android:layout_height="match_parent"
+				            android:layout_weight= "7"
+				            android:orientation="vertical" >
+	                        
+	                        <RelativeLayout 
+	                            android:layout_width="match_parent"
+					            android:layout_height="0dp"
+					            android:layout_weight= "25">
+	                            
+	                            <TextView 
+				                    android:layout_width="wrap_content"
+				                    android:layout_height="wrap_content"
+				                    android:text="Alarm Duration"
+				                    android:textSize="16sp"
+				                    android:textColor="#79DEAB"
+				                    android:layout_marginLeft="20dp"
+				                    android:layout_alignParentBottom="true" />
+	                            
+	                        </RelativeLayout>
+	                        
+	                        <LinearLayout 
+		                        android:layout_width="match_parent"
+					            android:layout_height="0dp"
+					            android:layout_weight= "50"
+					            android:orientation="horizontal" >
+	                        
+	                            <RelativeLayout 
+		                            android:layout_width="0dp"
+						            android:layout_height="match_parent"
+						            android:layout_weight= "10">
+						            
+			                        <ImageButton
+					                    android:id="@+id/left_nav_timer"
+					                    android:layout_width="wrap_content"
+					                    android:layout_height="wrap_content"
+					                    android:layout_centerVertical="true"
+					                    android:layout_marginRight="5dp"
+					                    android:onClick="clickLeftNavTimer"
+					                    android:background="@drawable/left_nav_timer" />
+			                    </RelativeLayout>
+		                        
+	                            <RelativeLayout 
+		                            android:layout_width="0dp"
+						            android:layout_height="match_parent"
+						            android:layout_weight= "60">
+			                        
+			                        <TextView
+			                            android:id="@+id/timer_control_text"
+					                    android:layout_width="wrap_content"
+					                    android:layout_height="wrap_content"
+					                    android:layout_centerInParent="true"
+					                    android:textSize="18sp"
+					                    android:textColor="#222222" />
+			                    </RelativeLayout>
+		                        
+	                            <RelativeLayout 
+		                            android:layout_width="0dp"
+						            android:layout_height="match_parent"
+						            android:layout_weight= "30">
+			                        <ImageButton
+					                    android:id="@+id/right_nav_timer"
+					                    android:layout_width="wrap_content"
+					                    android:layout_height="wrap_content"
+					                    android:layout_centerVertical="true"
+					                    android:onClick="clickRightNavTimer"
+					                    android:layout_marginLeft="5dp"
+					                    android:layout_marginRight="5dp"
+					                    android:background="@drawable/right_nav_timer" />
+			                    </RelativeLayout>
+	                        </LinearLayout>
+	                        
+	                        <RelativeLayout 
+	                            android:layout_width="match_parent"
+					            android:layout_height="0dp"
+					            android:layout_weight= "30">
+
+	                        </RelativeLayout>
+	                        
+	                    </LinearLayout>
+	                    
+	                </LinearLayout>
+		            
+		        </RelativeLayout>
+		        
+	            <RelativeLayout 
+		            android:id="@+id/tone_container" 
+		            android:layout_width="match_parent"
+		            android:layout_height="0dp"
+		            android:layout_weight="1" >
+	
+	                <ImageView
+	                    android:id="@+id/tone_background"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentLeft="true"
+	                    android:layout_alignParentTop="true"
+	                    android:src="@drawable/tone_background" />
+	                
+	                <LinearLayout 
+	                    android:layout_width="match_parent"
+	                    android:layout_height="match_parent"
+	                    android:orientation="horizontal"
+	                    android:layout_alignParentLeft="true"
+	                    android:layout_alignParentRight="true">
+	                    
+	                    <TextView 
+		                    android:layout_width="0dp"
+		                    android:layout_height="match_parent"
+		                    android:text="null"
+		                    android:textSize="16sp"
+		                    android:textColor="#00FFFFFF"
+		                    android:layout_weight="3" />
+	                    
+	                    <LinearLayout 
+	                        android:layout_width="0dp"
+				            android:layout_height="match_parent"
+				            android:layout_weight= "7"
+				            android:orientation="vertical" >
+	                        
+	                        <RelativeLayout 
+	                            android:layout_width="match_parent"
+					            android:layout_height="0dp"
+					            android:layout_weight= "25">
+	                            
+	                            <TextView 
+				                    android:layout_width="wrap_content"
+				                    android:layout_height="wrap_content"
+				                    android:text="Alarm Tone"
+				                    android:textSize="16sp"
+				                    android:textColor="#EAB886"
+				                    android:layout_marginLeft="20dp"
+				                    android:layout_alignParentBottom="true" />
+	                            
+	                        </RelativeLayout>
+	                        
+	                        <LinearLayout 
+		                        android:layout_width="match_parent"
+					            android:layout_height="0dp"
+					            android:layout_weight= "50"
+					            android:orientation="horizontal" >
+	                        
+	                            <RelativeLayout 
+		                            android:layout_width="0dp"
+						            android:layout_height="match_parent"
+						            android:layout_weight= "10">
+						            
+			                        <ImageButton
+					                    android:id="@+id/left_nav_tone"
+					                    android:layout_width="wrap_content"
+					                    android:layout_height="wrap_content"
+					                    android:layout_centerVertical="true"
+					                    android:layout_marginRight="5dp"
+					                    android:onClick="clickLeftNavTone"
+					                    android:background="@drawable/left_nav_tone" />
+			                    </RelativeLayout>
+		                        
+	                            <RelativeLayout 
+		                            android:layout_width="0dp"
+						            android:layout_height="match_parent"
+						            android:layout_weight= "60">
+			                        
+			                        <TextView
+			                            android:id="@+id/tone_control_text"
+					                    android:layout_width="wrap_content"
+					                    android:layout_height="wrap_content"
+					                    android:layout_centerInParent="true"
+					                    android:textSize="18sp"
+					                    android:textColor="#222222" />
+			                    </RelativeLayout>
+		                        
+	                            <RelativeLayout 
+		                            android:layout_width="0dp"
+						            android:layout_height="match_parent"
+						            android:layout_weight= "30">
+			                        <ImageButton
+					                    android:id="@+id/right_nav_tone"
+					                    android:layout_width="wrap_content"
+					                    android:layout_height="wrap_content"
+					                    android:layout_centerVertical="true"
+					                    android:onClick="clickRightNavTone"
+					                    android:layout_marginLeft="5dp"
+					                    android:layout_marginRight="5dp"
+					                    android:background="@drawable/right_nav_tone" />
+			                    </RelativeLayout>
+	                        </LinearLayout>
+	                        
+	                        <RelativeLayout 
+	                            android:layout_width="match_parent"
+					            android:layout_height="0dp"
+					            android:layout_weight= "30">
+
+	                        </RelativeLayout>
+	                        
+	                    </LinearLayout>
+     
+	                    
+	                </LinearLayout>
+		            
+		        </RelativeLayout>
+		        
+		    </LinearLayout>
+		    
+	        <RelativeLayout 
+	            android:id="@+id/falling_man_container" 
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="25" >
+	            
+	        </RelativeLayout>  
+	             
+	    </LinearLayout>
+	    
+	    <LinearLayout
+	        android:id="@+id/activate_container"
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:orientation="vertical"
+	        android:layout_weight="15" >
+	        
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:orientation="horizontal" >
+	            
+	            <RelativeLayout 
+	                android:layout_width="0dp"
+		            android:layout_height="match_parent"
+		            android:layout_weight="70"
+		            android:paddingTop="10dp">
+	                
+	                <LinearLayout
+	                    android:layout_width="match_parent"
+				        android:layout_height="match_parent"
+				        android:orientation="horizontal" >
+	                    
+	                    <RelativeLayout 
+			                android:layout_width="0dp"
+				            android:layout_height="match_parent"
+				            android:layout_weight="50">
+		                    <ImageButton
+			                    android:id="@+id/service_button"
+			                    android:layout_width="wrap_content"
+			                    android:layout_height="wrap_content"
+			                    android:scaleType="fitStart"
+			                    android:layout_alignParentLeft="true"
+			                    android:src="@drawable/service_action_nstarted"
+			                    android:background="@null"
+			                    android:onClick="onServiceToggle" />
+		                    
+		                </RelativeLayout>
+	                    
+	                    <LinearLayout 
+				            android:layout_width="0dp"
+					        android:layout_height="match_parent"
+					        android:orientation="horizontal"
+					        android:layout_weight="50" />
+	                    
+	                </LinearLayout>
+	                
+	                
+	            </RelativeLayout>
+	            
+	            <RelativeLayout 
+	                android:layout_width="0dp"
+		            android:layout_height="match_parent"
+		            android:layout_weight="30">
+	                
+	                <ImageView
+	                    android:id="@+id/falling_figure_image"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentLeft="true"
+	                    android:layout_alignParentTop="true"
+	                    android:src="@drawable/falling_figure" />
+	                
+	            </RelativeLayout>
+	            
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+    
+    </LinearLayout>
+
+</RelativeLayout>
